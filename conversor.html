@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Maquina Binária</title>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+  	
+  	function convert() {
+   		partereal = parseInt(document.getElementById("partereal").value);
+   		partefloat = parseFloat(document.getElementById("partefloat").value);
+
+   		total = partereal + partefloat;
+
+   		var binario = total.toString(2);
+
+
+   		document.getElementById('resultado').value = binario;
+   	}
+
+  </script>
+</head>
+<body style="background-color: #f2f2f2">
+      <div class="header">
+      <div class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" style="font-family: FreeMono;" href="index.html">Calculo Numérico</a>
+          </div>
+          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active" style="font-family: FreeMono;"><a href="conversor.html">Máquina Binária</a></li>
+              <li style="font-family: FreeMono;"><a href="floats.html">Floats</a></li>
+               <li style="font-family: FreeMono;"><a href="bisseccao.html">Bissecção</a></li>
+               <li style="font-family: FreeMono;"><a href="newton.html">Newton</a></li>
+               <li style="font-family: FreeMono;"><a href="grupo.html">Nosso grupo</a></li>
+
+            </ul>
+          </div>
+        </div>  
+     
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="row">
+    <div class="container">
+		<div class="jumbotron" style="width: 300px; margin-left: 33%; background-color: #cce6ff;">
+			<div class="form-group" style="width: 240px;  margin-left: -30px;">
+			  <label for="usr" style="font-family: FreeMono; margin-top: -20px;">Valores a serem convertidos:</label>
+			  <input type="number" placeholder="Parte Real (Ex: 5)" id="partereal" class="form-control" style="margin-bottom: 10px;">
+			  <input type="number" placeholder="Parte Decimal (Ex: 0.75)" id="partefloat" class="form-control">
+			  <button type="button" class="btn container" style="margin-top: 30px; background-color: #80aaff;" onclick="convert()"><div style="font-family: FreeMono; color: black;"> Converter </div></button>
+			</div>
+	</div>  
+</div>  
+
+<div class="row">
+    <div class="container">
+		<div class="jumbotron" style="margin-top: -10px; position: relative; width: 300px; height: 180px; margin-left: 33%; background-color: #cce6ff;">
+		<label for="usr" style="font-family: FreeMono;">Resultado:</label>
+		<input id="resultado" class="form-control" type="text" style="margin-top: 0px;"> </div>
+		</div>	
+	</div>  
+</div>  
+
+
+
+</body>
+</html>
