@@ -43,14 +43,16 @@
                     for(z=0; z < base; z++)
                     {
                         zstr = z.toString();
-                        numValores[aux]= "0." + jstr + kstr + zstr + " x 10^" + istr;
-                        aux++;
+                        numValores[((cardinalidade-1)/2)-aux++]= "-0." + jstr + kstr + zstr + " x 10^" + istr;
+                        numValores[((cardinalidade)/2)+aux+0.5] = "0." + jstr + kstr + zstr + " x 10^" + istr;
+                        //aux++;
                     }
                 }
             }
         }
+        numValores[((cardinalidade-1)/2)+1]= "0";
       }
-      document.getElementById('teste').value = numValores[0];
+      document.getElementById('teste').value = numValores[2700] + "      "+numValores[2701]+ "      "+numValores[2702];
     }
 
   </script>
