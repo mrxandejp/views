@@ -22,16 +22,35 @@
 
       var numValores = new Array(cardinalidade);
       var aux = 0;
-      if(base == 2){
-        if(ndigitos == 1){
-          for (var i = limInf; i <= limSup; i++) {
-            numValores[aux] = "0.1 x10^" + i.toString();                  
-          } 
+
+      var istr;
+      var jstr;
+      var kstr;
+      var zstr;
+
+      if(ndigitos == 3){
+        for(i = limInf; i < limSup; i++){           
+            istr = i.toString();
+
+            for(j= 1; j < base; j++)
+            {
+                jstr = j.toString();
+
+                for(k=0 ; k < base; k++)
+                {
+                    kstr = k.toString();
+
+                    for(z=0; z < base; z++)
+                    {
+                        zstr = z.toString();
+                        numValores[aux]= "0." + jstr + kstr + zstr + " x 10^" + istr;
+                        aux++;
+                    }
+                }
+            }
         }
       }
-      else{
-
-      }
+      document.getElementById('teste').value = numValores[0];
     }
 
   </script>
@@ -84,7 +103,9 @@
     <div class="container">
     <div class="jumbotron" style="margin-top: -10px; position: relative; width: 300px; height: 180px; margin-left: 33%; background-color: #cce6ff;">
     <label for="usr" style="font-family: FreeMono;">Cardinalidade:</label>
-    <input id="resultado" class="form-control" type="text" style="margin-top: 0px;"> </div>
+    <input id="resultado" class="form-control" type="text" style="margin-top: 0px;"> 
+    <label for="usr" style="font-family: FreeMono;">TESTE:</label>
+    <input id="teste" class="form-control" type="text" style="margin-top: 0px;"> </div>
     </div>  
   </div>  
 </div>  
