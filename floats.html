@@ -20,7 +20,7 @@
       var resultado = cardinalidade.toString();
       document.getElementById('resultado').value = resultado;
 
-      var numValores = new Array(cardinalidade);
+      var numValores = new Array(cardinalidade-1);
       var aux = 0;
 
       var istr;
@@ -29,7 +29,7 @@
       var zstr;
 
       if(ndigitos == 3){
-        for(i = limInf; i < limSup; i++){           
+        for(i = limInf; i <= limSup; i++){           
             istr = i.toString();
 
             for(j= 1; j < base; j++)
@@ -42,17 +42,17 @@
 
                     for(z=0; z < base; z++)
                     {
+                        aux++;
                         zstr = z.toString();
-                        numValores[((cardinalidade-1)/2)-aux++]= "-0." + jstr + kstr + zstr + " x 10^" + istr;
-                        numValores[((cardinalidade)/2)+aux+0.5] = "0." + jstr + kstr + zstr + " x 10^" + istr;
-                        //aux++;
+                        numValores[((cardinalidade)/2)-aux-0.5]= "-0." + jstr + kstr + zstr + " x 10^" + istr;
+                        numValores[((cardinalidade)/2)+aux-0.5] = "0." + jstr + kstr + zstr + " x 10^" + istr;
                     }
                 }
             }
         }
-        numValores[((cardinalidade-1)/2)+1]= "0";
+        numValores[((cardinalidade)/2)-0.5]= "0";
       }
-      document.getElementById('teste').value = numValores[2700] + "      "+numValores[2701]+ "      "+numValores[2702];
+      document.getElementById('teste').value = numValores[2699] + "      "+numValores[2700]+ "      "+numValores[2701];
     }
 
   </script>
