@@ -28,8 +28,50 @@
       var kstr;
       var zstr;
 
-      if(ndigitos == 3){
-        for(i = limInf; i <= limSup; i++){           
+    if(ndigitos == 1){
+		  for(i = limInf; i <= limSup; i++)
+      {           
+		    istr = i.toString();
+
+		    for(j= 1; j < base; j++)
+		    {		          
+	            aux++;
+	            jstr = j.toString();
+	            numValores[((cardinalidade)/2)-aux-0.5]= "-0." + jstr + " x 10^" + istr;
+	            numValores[((cardinalidade)/2)+aux-0.5] = "0." + jstr + " x 10^" + istr;     
+			}
+		}
+		numValores[((cardinalidade)/2)-0.5]= "0";
+		document.getElementById('teste').value = numValores[26] + "      "+numValores[27]+ "      "+numValores[28];
+	}
+
+    if(ndigitos == 2)
+    {
+        for(i = limInf; i <= limSup; i++)
+        {           
+            istr = i.toString();
+
+            for(j= 1; j < base; j++)
+            {
+                jstr = j.toString();
+
+                for(k=0 ; k < base; k++)
+                {                  
+                    aux++;
+                    kstr = k.toString();
+                    numValores[((cardinalidade)/2)-aux-0.5]= "-0." + jstr + kstr + " x 10^" + istr;
+                    numValores[((cardinalidade)/2)+aux-0.5] = "0." + jstr + kstr + " x 10^" + istr;
+                }
+            }
+        }
+        numValores[((cardinalidade)/2)-0.5]= "0";
+        document.getElementById('teste').value = numValores[269] + "      "+numValores[270]+ "      "+numValores[271];
+      }
+      
+      if(ndigitos == 3)
+      {
+        for(i = limInf; i <= limSup; i++)
+        {           
             istr = i.toString();
 
             for(j= 1; j < base; j++)
@@ -51,8 +93,8 @@
             }
         }
         numValores[((cardinalidade)/2)-0.5]= "0";
+        document.getElementById('teste').value = numValores[2699] + "      "+numValores[2700]+ "      "+numValores[2701];
       }
-      document.getElementById('teste').value = numValores[2699] + "      "+numValores[2700]+ "      "+numValores[2701];
     }
 
   </script>
