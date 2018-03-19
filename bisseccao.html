@@ -9,7 +9,17 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
   <script type="text/javascript" src="/javascripts/angular.min.js"></script>
-  <script src="/javascripts/reviewscontroller.js"></script>
+  <script src="funcionbisseccao.js"></script>
+  <script type="text/javascript">
+    
+
+
+    function raiz() {
+      document.getElementById('resultado').value = '1';
+    }
+
+
+  </script>
 </head>
 <body>
       <div class="header container">
@@ -41,9 +51,29 @@
 
 <div class="row">
     <div class="container">
+    <div class="jumbotron" style=" width: 300px; margin-left: 33%; background-color: #cce6ff;">
 
-	</div>  
-</div> 
+      <div class="form-group" style="width: 240px;  margin-left: -30px;">
+        <label for="usr" style="font-family: FreeMono; margin-top: -20px;">Valores a serem convertidos:</label>
+        <input type="number" placeholder="Parte Real (Ex: 5)" id="partereal" class="form-control" style="margin-bottom: 10px;">
+        <input type="number" placeholder="Parte Decimal (Ex: 0.75)" id="partefloat" class="form-control">
+        <button type="button" class="btn container" style="margin-top: 30px; background-color: #80aaff;" onclick="raiz()"><div style="font-family: FreeMono; color: black;"> Converter </div></button>
+      </div>
+
+
+  </div>  
+</div>  
+
+<div class="row">
+    <div class="container">
+    <div class="jumbotron" style="margin-top: -10px; position: relative; width: 300px; height: 180px; margin-left: 33%; background-color: #cce6ff;">
+    <label for="usr" style="font-family: FreeMono;">Resultado:</label>
+    <input id="resultado" class="form-control" type="text" style="margin-top: 0px;"> </div>
+    </div>  
+  </div>  
+</div>  
+
+
 
 
 </body>

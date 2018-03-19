@@ -9,7 +9,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
   <script type="text/javascript" src="/javascripts/angular.min.js"></script>
-  <script src="/javascripts/reviewscontroller.js"></script>
+  <script type="text/javascript" src="funcion.js"></script>
+  <script src="http://nerdamer.com/js/nerdamer.core.js"></script>
+  <script src="http://nerdamer.com/js/Algebra.js"></script>
+  <script src="http://nerdamer.com/js/Calculus.js"></script>
 </head>
 <body>
       <div class="header container">
@@ -41,9 +44,48 @@
 
 <div class="row">
     <div class="container">
-      
-</div> 
+    <div class="jumbotron" style=" width: 700px; margin-left: 16%; background-color: #cce6ff;">
 
+        <form class="form-group" name="formulario" onsubmit="return procesar(this);" style="width: 240px;  margin-left: 30%;">
+        <label for="usr" style="font-family: FreeMono; margin-top: -20px;">Coloque o valor inicial:</label>
+            <input type="text" placeholder="(Ex: 10)" name="x" size="4" class="form-control" style="margin-bottom: 10px;">
+            
+        <label for="usr" style="font-family: FreeMono; margin-top: -20px;">Coloque sua função:</label>
+            <input name="func" type="text" size="15" placeholder="(Ex: x^2 + 1)" class="form-control" style="margin-bottom: 10px;"/>
+
+        <input type="submit" class="btn container" value="Converter" style="margin-top: 30px; background-color: #80aaff; font-family: FreeMono; color: black" >
+      </form>
+
+
+  </div>  
+</div>  
+
+<div class="row">
+    <div class="container">
+    <div class="jumbotron" style="margin-top: -10px; position: absolute; width: 700px; margin-left: 13.5%; height: 400px; background-color: #cce6ff;">
+    <label for="usr" style="font-family: FreeMono;">Cardinalidade:</label>
+    <input id="resultado" class="form-control" type="text" style="margin-top: 0px;">
+
+    <div class="container">
+        <table class="table table-striped" style="margin-bottom: -3px">
+          <thead>
+            <tr>
+              <th class="col-md-6">Valor atual</th>
+              <th >Valor médio</th>
+            </tr>
+          </thead> 
+        </table>
+    </div>
+    <div class="container" style="width:600px; height:200px; overflow:auto;">
+        <table class="table table-striped" id="tabela-numValores">
+            <tr></tr>
+        </table>
+    </div>
+
+
+    </div>  
+  </div>  
+</div>  
 
 </body>
 </html>
