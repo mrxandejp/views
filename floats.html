@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Maquina Binária</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script>
+    function convert() {
+      base = parseInt(document.getElementById("base").value);
+      ndigitos = parseInt(document.getElementById("ndigitos").value);
+      limInf = parseInt(document.getElementById("limInf").value);
+      limSup = parseInt(document.getElementById("limSup").value);
+
+      var cardinalidade = parseInt(2*(base-1)*(Math.pow(base,ndigitos-1))*(limSup - limInf + 1) +1);
+
+      var resultado = cardinalidade.toString();
+      document.getElementById('resultado').value = resultado;
+
+      var numValores = new Array(cardinalidade-1);
+      var aux = 0;
+
+      var istr;
+      var jstr;
+      var kstr;
+      var zstr;
+
+      if(ndigitos == 1){
+  		  for(i = limInf; i <= limSup; i++)
+        {           
+  		    istr = i.toString();
+
+  		    for(j= 1; j < base; j++)
+  		    {		          
+  	            aux++;
+  	            jstr = j.toString();
+  	            numValores[((cardinalidade)/2)-aux-0.5]= "-0." + jstr + " x 10^" + istr;
+  	            numValores[((cardinalidade)/2)+aux-0.5] = "0." + jstr + " x 10^" + istr;     
+  			 }
+  		}
+  	 }
+
+      if(ndigitos == 2)
+      {
+          for(i = limInf; i <= limSup; i++)
+          {           
+              istr = i.toString();
+
+              for(j= 1; j < base; j++)
+              {
+                  jstr = j.toString();
+
+                  for(k=0 ; k < base; k++)
+                  {                  
+                      aux++;
+                      kstr = k.toString();
+                      numValores[((cardinalidade)/2)-aux-0.5]= "-0." + jstr + kstr + " x 10^" + istr;
+                      numValores[((cardinalidade)/2)+aux-0.5] = "0." + jstr + kstr + " x 10^" + istr;
+                  }
+              }
+          }
+      }
+      
+      if(ndigitos == 3)
+      {
+        for(i = limInf; i <= limSup; i++)
+        {           
+            istr = i.toString();
+
+            for(j= 1; j < base; j++)
+            {
+                jstr = j.toString();
+
+                for(k=0 ; k < base; k++)
+                {
+                    kstr = k.toString();
+
+                    for(z=0; z < base; z++)
+                    {
+                        aux++;
+                        zstr = z.toString();
+                        numValores[((cardinalidade)/2)-aux-0.5]= "-0." + jstr + kstr + zstr + " x 10^" + istr;
+                        numValores[((cardinalidade)/2)+aux-0.5] = "0." + jstr + kstr + zstr + " x 10^" + istr;
+                    }
+                }
+            }
+        }
+      }
+      numValores[((cardinalidade)/2)-0.5]= "0";
+      var table = document.getElementById('tabela-numValores');
+      var row;
+
+      for (var i =  0; i < cardinalidade; i++) {
+          row = table.insertRow(i+1);
+          row.innerHTML = "<td>"+   i   +"</td> <td>"+numValores[i] +"</td>"; 
+      }
+    }
+  </script>
+</head>
+<body style="background-color: #f2f2f2">
+      <div class="header">
+      <div class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" style="font-family: FreeMono;" href="index.html">Calculo Numérico</a>
+          </div>
+          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active" style="font-family: FreeMono;"><a href="conversor.html">Máquina Binária</a></li>
+              <li style="font-family: FreeMono;"><a href="floats.html">Floats</a></li>
+               <li style="font-family: FreeMono;"><a href="bisseccao.html">Bissecção</a></li>
+               <li style="font-family: FreeMono;"><a href="newton.html">Newton</a></li>
+               <li style="font-family: FreeMono;"><a href="grupo.html">Nosso grupo</a></li>
+
+            </ul>
+          </div>
+        </div>  
+     
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="row">
+    <div class="container">
+    <div class="jumbotron" style=" width: 700px; margin-left: 16%; background-color: #cce6ff;">
+      <div class="form-group" style="width: 240px;  margin-left: 30%;">
+        <label for="usr" style="font-family: FreeMono; margin-top: -20px;">Valores a serem convertidos:</label>
+        <input type="number" placeholder="Base (Ex: 10)" id="base" class="form-control" style="margin-bottom: 10px;">
+        <input type="number" placeholder="Número de digitos (Ex: 3)" id="ndigitos" class="form-control" style="margin-bottom: 10px;">
+        <input type="number" placeholder="Limitante inferior (Ex: -1)" id="limInf" class="form-control" style="margin-bottom: 10px;">
+        <input type="number" placeholder="Limitante superior (Ex: 1)" id="limSup" class="form-control" style="margin-bottom: 10px;">
+        <button type="button" class="btn container" style="margin-top: 30px; background-color: #80aaff;" onclick="convert()"><div style="font-family: FreeMono; color: black;"> Converter </div></button>
+      </div>
+  </div>  
+</div>  
+
+<div class="row">
+    <div class="container">
+    <div class="jumbotron" style="margin-top: -10px; position: absolute; width: 700px; margin-left: 13.5%; height: 400px; background-color: #cce6ff;">
+    <label for="usr" style="font-family: FreeMono;">Cardinalidade:</label>
+    <input id="resultado" class="form-control" type="text" style="margin-top: 0px;">
+
+    <div class="container">
+        <table class="table table-striped" style="margin-bottom: -3px">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Valor</th>
+            </tr>
+          </thead>  
+        </table>
+    </div>
+    <div class="container" style="width:600px; height:200px; overflow:auto;">
+        <table class="table table-striped" id="tabela-numValores">
+            <tr></tr>
+        </table>
+    </div>
+
+
+    </div>  
+  </div>  
+</div>  
+
+</body>
+
+</html>
