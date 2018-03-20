@@ -127,7 +127,7 @@
     var layout = {
       autosize: false,
       width: 500,
-      height: 500,
+      height: 250,
       margin: {
         l: 50,
         r: 50,
@@ -136,14 +136,14 @@
         pad: 4
       },
       paper_bgcolor: '#cce6ff',
-      plot_bgcolor: '#c7c7c7'
+      plot_bgcolor: 'white'
     };
     Plotly.newPlot('myDiv', data, layout);
 
     }
   </script>
 </head>
-<body style="background-color: #f2f2f2">
+<body style="background-image: url(https://www.kampocesku.cz/jpg/galerie/velky/21647_Image00084.jpg); ">
       <div class="header">
       <div class="navbar navbar-inverse" role="navigation">
         <div class="container">
@@ -154,12 +154,12 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" style="font-family: FreeMono;" href="index.html">Calculo Numérico</a>
+           <a class="navbar-brand" style="font-family: FreeMono;" href="index.html">Cálculo Numérico</a>
           </div>
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
             <ul class="nav navbar-nav">
-              <li class="active" style="font-family: FreeMono;"><a href="conversor.html">Máquina Binária</a></li>
-              <li style="font-family: FreeMono;"><a href="floats.html">Floats</a></li>
+              <li  style="font-family: FreeMono;"><a href="conversor.html">Máquina Binária</a></li>
+              <li  class="active" style="font-family: FreeMono;"><a href="floats.html">Floats</a></li>
                <li style="font-family: FreeMono;"><a href="bisseccao.html">Bissecção</a></li>
                <li style="font-family: FreeMono;"><a href="newton.html">Newton</a></li>
                <li style="font-family: FreeMono;"><a href="grupo.html">Nosso grupo</a></li>
@@ -175,22 +175,30 @@
 
 <div class="row">
     <div class="container">
-    <div class="jumbotron" style=" width: 700px; margin-left: 16%; background-color: #cce6ff;">
-      <div class="form-group" style="width: 240px;  margin-left: 30%;">
-        <label for="usr" style="font-family: FreeMono; margin-top: -20px;">Valores a serem convertidos:</label>
+    <div class="jumbotron" style=" width: 350px; margin-left: 8%; background-color:  #DCDCDC;">
+      <div class="form-group" style="width: 240px; margin-left: -7px;">
+        <label for="usr" style="font-family: FreeMono; margin-top: -20px; ">Valores a serem convertidos:</label>
         <input type="number" placeholder="Base (Ex: 10)" id="base" class="form-control" style="margin-bottom: 10px;">
         <input type="number" placeholder="Número de digitos (Ex: 3)" id="ndigitos" class="form-control" style="margin-bottom: 10px;">
         <input type="number" placeholder="Limitante inferior (Ex: -1)" id="limInf" class="form-control" style="margin-bottom: 10px;">
         <input type="number" placeholder="Limitante superior (Ex: 1)" id="limSup" class="form-control" style="margin-bottom: 10px;">
-        <button type="button" class="btn container" style="margin-top: 30px; background-color: #80aaff;" onclick="convert()"><div style="font-family: FreeMono; color: black;"> Converter </div></button>
+        <button type="button" class="btn container" style="margin-top: 30px; background-color: #80aaff;" onclick="convert()"><div style="font-family: FreeMono; color: white;"> Converter </div></button>
       </div>
   </div>  
 </div>  
 
 <div class="row">
     <div class="container">
-    <div class="jumbotron" style="margin-top: -10px; position: absolute; width: 700px; margin-left: 13.5%; height: 900px; background-color: #cce6ff;">
-    <label for="usr" style="font-family: FreeMono;">Cardinalidade:</label>
+    <div class="jumbotron" style=" width: 350px; margin-left: 8%; background-color: #C0C0C0; height: 380px; ">
+    <img src="https://image.flaticon.com/icons/png/512/57/57108.png" style="width: 40px; margin-bottom: 30px; margin-left: 37%;">
+    <p style="font-size: 13px; text-indent: 20px; text-align: justify; margin: -10px;"> A utilização da notação de ponto flutuante é muito grande em computadores, tanto para cálculos matemáticos com precisão, renderização de imagens digitais (criação de imagens pelo computador) entre outros. Os processadores atuais se dedicam muito em aperfeiçoar a técnica de seus chips para a aritmética de ponto flutuante, devido à demanda de aplicativos gráficos e jogos 3D que se utilizam muito deste recurso. </p>
+  </div>  
+</div>
+
+<div class="row">
+    <div class="container">
+    <div class="jumbotron" style="margin-left: 480px; margin-top: -815px; width: 600px; height:375px; background-color: #DCDCDC; position: relative;">
+    <label for="usr" style="font-family: FreeMono; color:black;">Cardinalidade:</label>
     <input id="resultado" class="form-control" type="text" style="margin-top: 0px;">
 
     <div class="container">
@@ -208,14 +216,21 @@
             <tr></tr>
         </table>
     </div>
-        <!-- Plotly chart will be drawn inside this DIV -->
-        <label for="usr" style="font-family: FreeMono;">Gráfico:</label>
-        <div id="myDiv" style="width: 100%; height: 500px; margin-left: 10.5%;"></div>
-
+      
     </div>  
   </div>  
 </div>  
+<div class="row">
+    <div class="container">
+    <div class="jumbotron" style="margin-top: -407px; margin-left: 480px; width: 600px; height:375px; background-color:  #DCDCDC; position: relative;">
+<!-- Plotly chart will be drawn inside this DIV -->
+        <label for="usr" style="font-family: FreeMono;">Gráfico:</label>
+        <div id="myDiv" style="width: 100%; height: 500px; margin-top: 20px;"></div>
 
+
+    </div>  
+  </div>  
+</div> 
 </body>
 
 </html>

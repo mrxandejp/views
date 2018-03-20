@@ -27,7 +27,7 @@ function procesar(formulario) {
         
       
         row = table.insertRow(i+1);
-        row.innerHTML = '<td col-md-6>x<sub>' + i + '</sub></td><td>' + x_1 + '</td>'; 
+        row.innerHTML = '<td class="col-md-6">x<sub>' + i + '</sub></td><td class="col-md-6">' + x_1 + '</td>'; 
 
       i++;
         //I imagine that this is your safety so I would implement it like this
