@@ -13,6 +13,18 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
   <script>
+
+    function tableRefresh(numValores,cardinalidade){ 
+      var table = document.getElementById('tabela-numValores');
+      var row;
+      table.innerHTML="<tr></tr><tr></tr>";
+       for (var i =  0; i < cardinalidade; i++) {
+          row = table.insertRow(i+1);
+          row.innerHTML = "<td>"+   i   +"</td> <td>"+numValores[i] +"</td>"; 
+      }
+    }
+
+
     function convert() {
       base = parseInt(document.getElementById("base").value);
       ndigitos = parseInt(document.getElementById("ndigitos").value);
@@ -102,14 +114,8 @@
         }
       }
       numValores[((cardinalidade)/2)-0.5]= "0";
-      var table = document.getElementById('tabela-numValores');
-      var row;
 
-      for (var i =  0; i < cardinalidade; i++) {
-          row = table.insertRow(i+1);
-          row.innerHTML = "<td>"+   i   +"</td> <td>"+numValores[i] +"</td>"; 
-      }
-    
+      tableRefresh(numValores, cardinalidade);
       /* JAVASCRIPT CODE GOES HERE */
 
       for (var i = 0; i < cardinalidade; i++) {
@@ -183,7 +189,7 @@
         <input type="text" maxlength="1" onkeypress='return event.charCode >= 49 && event.charCode <= 51' placeholder="Número de digitos de 1 a 3" id="ndigitos" class="form-control" style="margin-bottom: 10px;">
         <input type="number" placeholder="Limitante inferior (Ex: -1)" id="limInf" class="form-control" style="margin-bottom: 10px;">
         <input type="number" placeholder="Limitante superior (Ex: 1)" id="limSup" class="form-control" style="margin-bottom: 10px;">
-        <button type="button" class="btn container" style="margin-top: 30px; background-color: #80aaff;" onclick="convert()"><div style="font-family: FreeMono; color: white;"> Converter </div></button>
+        <button type="button" class="btn container" style="margin-top: 30px; background-color: #80aaff;" onclick="convert()" ><div style="font-family: FreeMono; color: white;"> Converter </div></button>
       </div>
   </div>  
 </div>  
