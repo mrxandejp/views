@@ -4,50 +4,31 @@ function funcion(func, x) {
 }
 
 
-function procesar(formulario) {
-    var i = 0;
-    var func = document.getElementsByName("func")[0].value;
-    
-    var x = parseFloat(formulario.x.value);
-    var y = parseFloat(formulario.y.value);
+function bissecao(formulario){
+  var media;
 
+  var func = document.getElementsByName("func")[0].value;
 
-      while (1) {
+  var a = parseFloat(formulario.a.value);
+  var b = parseFloat(formulario.b.value);
+  var table = document.getElementById('tabela-numValores');
+  var row;
+  table.innerHTML="<tr></tr><tr></tr>";
+  var i = 0;
 
-        fx = funcion(func,x);
-        fy = funcion(func,y);
+  do{
+    media = (a+b)/2;
+    if(funcion(func, a)*funcion(func, media) < 0){
+      b = media;
+    }
+    if(funcion(func, a)*funcion(func, media) > 0){
+      a = media;
+    }
+    row = table.insertRow(i+1);
+    row.innerHTML = '<td class="col-md-6">' + funcion(func,media) + '</td><td class="col-md-6">' + media + '</td>' + '<td class="col-md-6">[' + a +' , ' + b +']</td>'; 
 
-        raiz = ((x + y)/2);
+    i++;
 
-        if(funcion(func,raiz)*fx < 0) {
-          y = raiz; 
-        }
-        else if(funcion(func,raiz)*fx > 0){ 
-           x = raiz
-        }
-        else return 0;
-
-      }
-
-      function click(){
-
-        document.getElementById('resultado').value = '1';
-        
-      }
-
-
-   /*   var table = document.getElementById('tabela-numValores');
-      var row;
-        
-      
-        row = table.insertRow(i+1);
-        row.innerHTML = '<td>x<sub>' + i + '</sub></td><td>' + x_1 + '</td>'; 
-      i++;
-
-
-        //I imagine that this is your safety so I would implement it like this
-        if(i > 100) break;
-    } while (e > 0.01);
-    document.getElementById('resultado').innerHTML = resultado + '</tbody></table><br>' + (i == 100 ? 'La solucion no es convergente. ' : 'La solucion es ' + x);
-    return false;*/
-
+  }while(funcion(func, media) == 0 || Math.abs(b-a) > 0.007);
+  return false;
+}

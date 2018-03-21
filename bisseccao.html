@@ -9,7 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
   <script type="text/javascript" src="/javascripts/angular.min.js"></script>
-    <script type="text/javascript" src="funcionbisseccao.js"></script>
+  <script type="text/javascript" src="funcionbisseccao.js"></script>
   <script src="http://nerdamer.com/js/nerdamer.core.js"></script>
   <script src="http://nerdamer.com/js/Algebra.js"></script>
   <script src="http://nerdamer.com/js/Calculus.js"></script>
@@ -40,36 +40,32 @@
           </div>
         </div>  
      
-          </div>
-        </div>
       </div>
     </div>
-
-
-
-
+  </div>
+</div>
 
 <div class="row">
     <div class="container">
     <div class="jumbotron" style=" width: 350px; margin-left: 16%; background-color:  #DCDCDC;">
-        <form class="form-group" name="formulario" style="width: 240px; margin-left: -7px;">
+        <form class="form-group" name="formulario" onsubmit="return bissecao(this);" style="width: 240px; margin-left: -7px; margin-top: 10px;">
 
         <label for="usr" style="font-family: FreeMono; margin-top: -20px;">Coloque o primeiro valor do intervalo:</label>
-            <input type="text" placeholder="(Ex: 10)" name="x" size="4" class="form-control" style="margin-bottom: 10px;">
-        
-        <label for="usr" style="font-family: FreeMono; margin-top: -20px;">Coloque o segundo valor do intervalo:</label>
-            <input type="text" placeholder="(Ex: 10)" name="x" size="4" class="form-control" style="margin-bottom: 10px;">
-            
+            <input type="text" placeholder="(Ex: 10)" name="a" size="4" class="form-control" style="margin-bottom: 10px;">
+
+        <label for="usr" style="font-family: FreeMono;">Coloque o segundo valor do intervalo:</label>
+            <input type="text" placeholder="(Ex: 10)" name="b" size="4" class="form-control" style="margin-bottom: 10px;">
 
 
-        <label for="usr" style="font-family: FreeMono; margin-top: -20px;">Coloque sua função:</label>
+        <label for="usr" style="font-family: FreeMono; margin-top: 10px;">Coloque sua função:</label>
             <input name="func" type="text" size="15" placeholder="(Ex: x^2 + 1)" class="form-control" style="margin-bottom: 10px;"/>
 
         <input type="submit" class="btn container" value="Converter" style="margin-top: 30px; background-color: #80aaff; font-family: FreeMono; color: black" >
       </form>
 
-  </div>  
-</div>  
+  </div>
+</div>
+
 
 <div class="row">
     <div class="container">
@@ -88,8 +84,9 @@
         <table class="table table-striped" style="margin-top: 15px">
           <thead>
             <tr>
-              <th class="col-md-6">Valor atual</th>
+              <th class="col-md-6">F<sub>(x)</th>
               <th class="col-md-6">Valor médio</th>
+              <th class="col-md-6">Intervalo</th>
             </tr>
           </thead> 
         </table>
@@ -99,9 +96,6 @@
             <tr></tr>
         </table>
     </div>
-
-
-
     </div>  
   </div>  
 </div>  
