@@ -135,7 +135,7 @@
         t: 30,
         pad: 4
       },
-      paper_bgcolor: '#cce6ff',
+      paper_bgcolor: '#DCDCDC',
       plot_bgcolor: 'white'
     };
     Plotly.newPlot('myDiv', data, layout);
@@ -179,7 +179,8 @@
       <div class="form-group" style="width: 240px; margin-left: -7px;">
         <label for="usr" style="font-family: FreeMono; margin-top: -20px; ">Valores a serem convertidos:</label>
         <input type="number" placeholder="Base (Ex: 10)" id="base" class="form-control" style="margin-bottom: 10px;">
-        <input type="number" placeholder="Número de digitos (Ex: 3)" id="ndigitos" class="form-control" style="margin-bottom: 10px;">
+        
+        <input type="text" maxlength="1" onkeypress='return event.charCode >= 49 && event.charCode <= 51' placeholder="Número de digitos de 1 a 3" id="ndigitos" class="form-control" style="margin-bottom: 10px;">
         <input type="number" placeholder="Limitante inferior (Ex: -1)" id="limInf" class="form-control" style="margin-bottom: 10px;">
         <input type="number" placeholder="Limitante superior (Ex: 1)" id="limSup" class="form-control" style="margin-bottom: 10px;">
         <button type="button" class="btn container" style="margin-top: 30px; background-color: #80aaff;" onclick="convert()"><div style="font-family: FreeMono; color: white;"> Converter </div></button>
@@ -199,7 +200,7 @@
     <div class="container">
     <div class="jumbotron" style="margin-left: 480px; margin-top: -815px; width: 600px; height:375px; background-color: #DCDCDC; position: relative;">
     <label for="usr" style="font-family: FreeMono; color:black;">Cardinalidade:</label>
-    <input id="resultado" class="form-control" type="text" style="margin-top: 0px;">
+    <input id="resultado" class="form-control" type="text" disabled="disabled" style="margin-top: 0px;">
 
     <div class="container">
         <table class="table table-striped" style="margin-bottom: -3px">
