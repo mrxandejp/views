@@ -18,15 +18,17 @@ function bissecao(formulario){
 
   do{
     media = (a+b)/2;
+    
+    row = table.insertRow(i+1);
+    row.innerHTML = '<td class="col-md-6">' + funcion(func,media) + '</td><td class="col-md-6">' + media + '</td>' + '<td class="col-md-6">[' + a +' , ' + b +']</td>'; 
+
     if(funcion(func, a)*funcion(func, media) < 0){
       b = media;
     }
     if(funcion(func, a)*funcion(func, media) > 0){
       a = media;
     }
-    row = table.insertRow(i+1);
-    row.innerHTML = '<td class="col-md-6">' + funcion(func,media) + '</td><td class="col-md-6">' + media + '</td>' + '<td class="col-md-6">[' + a +' , ' + b +']</td>'; 
-
+    
     i++;
 
   }while(funcion(func, media) == 0 || Math.abs(b-a) > 0.007);
